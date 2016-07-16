@@ -1,0 +1,38 @@
+<!doctype html>
+
+<!-- Assign our Angular module -->
+<html ng-app="wanttodo">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, intitial-scale=1">
+  <title>Want Todo</title>
+</head>
+
+<body ng-controller="maincontroller">
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Want Todo <span class="label label-info">{{ todos.length }}</span></h1>
+    </div>
+    <div id="todo-list" class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="checkout" ng-repeat="todo in todos">
+          <label>
+            <input type="checkout" ng-click="deleteTodo(todo._id)"> {{ todo.text }} </input>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div id="todo-form" class="row">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="cool" ng-model="formData.text">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+<html>
