@@ -7,8 +7,7 @@ function getTodos(res) {
         }
         res.json(todos);
     });
-}
-;
+};
 
 module.exports = function (app) {
     // api ---------------------------------------------------------------------
